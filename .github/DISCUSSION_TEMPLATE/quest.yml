@@ -1,16 +1,17 @@
 body:
-  - type: checkboxes
+  - type: dropdown
     id: quest
     attributes:
       label: Which version of the Quest editor are you using?
-      description: Let us know if you are using the WebEditor app or the Windows desktop version.
+      description: Let us know if you are using the Windows desktop version or the WebEditor app .
       options:
-        - label: Windows desktop
-        - label: Online/Web
-        required: true
+        - Windows desktop
+        - Online/Web
+    validations:
+      required: true
   - type: textarea
     attributes:
-      label: Ask a Question
-      placeholder: How do I ...
+      label: Add a body
+      placeholder: Ask a question...
     validations:
       required: true
