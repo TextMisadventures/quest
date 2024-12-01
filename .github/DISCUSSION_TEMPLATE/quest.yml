@@ -1,14 +1,14 @@
 body:
   - type: dropdown
-    id: operating-systems
+    id: quest
     attributes:
       label: Which version of the Quest editor are you using?
       description: This will let everyone know if the answer should apply to the WebEditor app or the Windows desktop version.
       options:
         - label: desktop
         - label: online
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Question to be asked
