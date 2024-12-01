@@ -5,9 +5,10 @@ body:
       label: Which version of the Quest editor are you using?
       description: Let us know if you are using the Windows desktop version or the WebEditor app .
       options:
+        - 
         - Windows desktop
         - Online/Web
-      default: 
+      default: 0
     validations:
       required: true
   - type: textarea
