@@ -5,8 +5,9 @@ body:
       label: Which version of the Quest editor are you using?
       description: This will let everyone know if the answer should apply to the WebEditor app or the Windows desktop version.
       options:
-        - label: Windows desktop
-        - label: Online/Web
+        - Windows desktop
+        - Online/Web
+      default:0
     validations:
       required: true
   - type: textarea
