@@ -7,7 +7,6 @@ body:
       options:
         - label: Windows desktop
         - label: Online/Web
-      default: 0
     validations:
       required: true
   - type: textarea
