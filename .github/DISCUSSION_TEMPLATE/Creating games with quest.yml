@@ -1,6 +1,6 @@
 body:
   - type: dropdown
-    id: Creating games with quest
+    id: Creating_games_with_quest
     attributes:
       label: Which version of the Quest editor are you using?
       description: Let us know if you are using the Windows desktop version or the WebEditor app .
@@ -13,7 +13,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Add a body
-      placeholder: Ask a question...
+      label: Ask a question
+      placeholder: Type here...
     validations:
       required: true
