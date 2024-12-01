@@ -1,12 +1,12 @@
 body:
-  - type: dropdown
+  - type: checkboxes
     id: quest
     attributes:
       label: Which version of the Quest editor are you using?
       description: Let us know if you are using the WebEditor app or the Windows desktop version.
       options:
-        - Windows desktop
-        - Online/Web
+        - label: Windows desktop
+        - label: Online/Web
       default: 0
     validations:
       required: true
