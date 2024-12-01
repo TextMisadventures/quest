@@ -7,8 +7,7 @@ body:
       options:
         - label: Windows desktop
         - label: Online/Web
-    validations:
-      required: true
+          required: true
   - type: textarea
     attributes:
       label: Ask a Question
