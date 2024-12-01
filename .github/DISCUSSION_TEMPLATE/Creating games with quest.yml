@@ -1,6 +1,6 @@
 body:
   - type: dropdown
-    id: quest
+    id: Creating games with quest
     attributes:
       label: Which version of the Quest editor are you using?
       description: Let us know if you are using the Windows desktop version or the WebEditor app .
