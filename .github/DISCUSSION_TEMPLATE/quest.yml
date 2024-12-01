@@ -3,11 +3,11 @@ body:
     id: quest
     attributes:
       label: Which version of the Quest editor are you using?
-      description: This will let everyone know if the answer should apply to the WebEditor app or the Windows desktop version.
+      description: Let us know if you are using the WebEditor app or the Windows desktop version.
       options:
         - Windows desktop
         - Online/Web
-      default: 0
+      default: -1
     validations:
       required: true
   - type: textarea
