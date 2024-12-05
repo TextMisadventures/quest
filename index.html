@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title>Quest Testing Central</title>
+    <meta charset="utf8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      body {
+        font-family: "Source Sans Pro",Calibri,Candara,Arial,sans-serif;
+        font-size: 15px;
+        line-height: 1.42857143;
+        color: #333333;
+      }
+      .game-p {
+        border: 1px solid #00004e;
+        padding: 2px;
+      }
+     .game-title{
+        font-weight:bold;
+     }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </head>
+  <body id="top">
+    <div class="container-fluid p-3 bg-dark text-white text-center" style="background-color:#00004e !important">
+      <h1 id="header">Quest Testing Central</h1>
+    </div>
+     <div class="container-fluid p-3 bg-body text-center"><h2>KV'S PICKS</h2><h4>Test the bug-fix build of the WebPlayer app</h4><center>NOTE: Be sure you have logged into the TextAdventures site in this same browser recently, else saving will not work.</center></div>
+        <div class="container">
+          <div class="row text-center" id="kv-picks-row">
+        </div>
+      </div>
+    <hr/>
+    <div id="load-your-own">
+      <center><label for="lyo-url">Enter a URL from <a href="javascript:void(0)" onclick="window.open('https://textadventures.co.uk', '_blank')">textadventures.co.uk</a> to load the game here for testing.</label> <sup><a href="http://kvqueststuff.textmisadventures.com/webplayerapphelp.html" target="_blank">?</a></sup><center>
+      <input type="url" id="lyo-url" onenter="loadForTesting(this)">
+      <button onclick="loadForTesting(document.getElementById('lyo-url').value)">Submit</button>
+    </div>
+    <hr/>
+    <div class="container mt-5 text-center">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3 id="test-the-desktop-version">Test the Desktop Version</h3>
+          <p><a target="_blank" href="https://drive.google.com/drive/folders/1cMfGx29cxXL9YDl4XWrW8z2oVUHfCny8?usp=drive_link">quest-590-testing</a> Drive directory</p>
+        </div>
+        <div class="col-sm-4">
+          <h3 id="report-a-bug">Report a bug</h3>        
+          <p><a href="http://kvqueststuff.textmisadventures.com/contactus/581-bug-report.asp" target="_blank">Report an issue</a> found in the testing build.</p>
+        </div>
+        <div class="col-sm-4">
+          <h3 id="your-transcripts">Your Transcripts</h3>
+          <p>View Your Transcripts <a href="http://play-test.textadventures.co.uk/Play.aspx?id=4wqdac8qd0sf7-ilff8mia" target="_blank">on this testing site</a>.</p>
+          <p>View Your Transcripts <a href="https://play.textadventures.co.uk/Play.aspx?id=4wqdac8qd0sf7-ilff8mia" target="_blank">on the textadventures site</a>.</p>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class="container mt-5"><center><h3 id="non-testing-section">NON-TESTING SECTION</h3></center><div class="container mt-5">
+      <div class="row text-center">
+        <div class="col-sm-4"><b>The Hitchhiker's Guide to the Galaxy</b><br/>(INFOCOM Solid Gold Edition)<br><a href="https://iplayif.com/?story=https://eblong.com/infocom/gamefiles/hitchhiker-invclues-r31-s871119.z5" target="_blank">Play on Parchment</a></div>
+        <div class="col-sm-4"><b>The World Ends Today, I Think...</b><br/>(Squiffy)<br><a href="https://textadventures.co.uk/games/play/pnmno4m7guu6zyjropbleg" target="_blank">Play on TextAdventures HTML Game Server</a></div><div class="col-sm-4"><b>The House on Highfield Lane</b><br/>(Quest 6)<br><a href="https://textadventures.co.uk/games/play/idu7hlna7k2h24ib4ymmrg" target="_blank">Play on TextAdventures HTML Game Server</a></div>
+      </div>
+    </div>
+  <hr/>
+  </body>
+  <script>
+    var kvPicks = {
+      "The Bony King of Nowhere": "z2yqtt1as0qxprpe1f5xag",
+      "Moquette": "zbzfpcnknu_vdjog-cbihw",
+      "Deeper": "em15b32xd0o-y-ysvgrtcg",
+      "The Mansion": "9qrmsisgfuwskhreitvpka",
+      "Xanadu - The World's Only Hope": "sihv9g3rdki50mt9_1v4bq",
+      "Into the Dragon's Den": "3z2xb2ruhkgq1t88wcpr7w",
+      "Xanadu - The World's Only Hope, Part 2 - Revenge": "iv6rcktu7eoajru0m9is5q",
+      "Good Night": "otwghen-rugkm8qcg7pita",
+      "Revenge of the Transcript": "wy88xmjhyek2pk1wdhwnxg",
+      /*"RBC (Deutsch)": "1bfl_w-5p0cnnnszmj4mqq",*/
+      "beta e": "tingudy-3ughvu4t3d-yew",
+      "Woo Rebooted": "dsi4artkceuko4rslaxzlq",
+      "Pixie's Quest": "jymfhimg00c5cvrdqna7xa"
+    };
+    Object.keys(kvPicks).forEach(function(key){
+      var btn = "<div class=\"col-sm-4 game-p\"><span class=\"game-title\">" + key + "</span><br><button class=\"btn btn-primary\" onclick=\"window.open('http://play-test.textadventures.co.uk/Play.aspx?id=" + kvPicks[key] + "', '_blank')\">Play</button>  <button class=\"btn btn-info\" onclick=\"window.open('http://play-test.textadventures.co.uk/Resume?id=" + kvPicks[key] + "', '_blank')\">Resume</button></div>";
+      document.getElementById("kv-picks-row").innerHTML+= btn;
+    });
+    var loadForTesting = function(url){
+      console.log(url);
+      if (url.startsWith("https://play.")){
+        window.open(url.replace('https://play.','http://play-test.'), '_blank');
+      } else if (url.startsWith("https://textadventures.co.uk/games/view/")){
+        var gameId = url.replace("https://textadventures.co.uk/games/view/","").split("/")[0];
+        if (gameId == null) {
+          window.alert("Invalid link.");
+          return;
+        }
+        window.open("http://play-test.textadventures.co.uk/Play.aspx?id=" + gameId + "", "_blank");
+      } else if (url.startsWith("https://textadventures.co.uk/games/play/")){
+        var gameId = url.replace("https://textadventures.co.uk/games/play/","");
+        if (gameId == null) {
+          window.alert("Invalid link.");
+          return;
+        }
+        window.open("http://play-test.textadventures.co.uk/Play.aspx?id=" + gameId + "", "_blank");
+      } else if (url.startsWith("https://textadventures.co.uk/games/resume/")){
+        var gameId = url.replace("https://textadventures.co.uk/games/resume/","");
+        if (gameId == null) {
+          window.alert("Invalid link.");
+          return;
+        }
+        window.open("http://play-test.textadventures.co.uk/Resume?id=" + gameId + "", "_blank");
+      } else {
+        window.alert("Invalid link.");
+      }
+    };
+  </script>
+</html>
