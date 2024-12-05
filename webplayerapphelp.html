@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>WebPlayer App Help</title>
+  </head>
+  <body>
+    <center><h3 id="how-to-get-the-url">How to get the URL to load the game here for testing.</h3>
+    Go to <a href="https://textadventures.co.uk" target="_blank">textadventures.co.uk</a> and open a Quest game to play online.
+    <br/><br/>
+    Once the game is loaded and ready to play, copy that URL from your browser's address bar and copy it here:
+    <hr/>
+    <div id="load-your-own">
+      <label for="lyo-url">Enter a URL from <a href="javascript:void(0)" onclick="window.open('https://textadventures.co.uk', '_blank')">textadventures.co.uk</a> to load the game here for testing.</label><center>
+      <input type="url" id="lyo-url" onenter="loadForTesting(this)">
+      <button onclick="loadForTesting(document.getElementById('lyo-url').value)">Submit</button>
+    </div>
+    <hr/>
+    <div id="example"><h2>Example</h2>
+    This is the URL in my browser's address bar when I have "Moquette" open for play online:
+    <br/>
+    <code>https://play.textadventures.co.uk/Play.aspx?id=zbzfpcnknu_vdjog-cbihw</code>
+    <br/><br/>
+    If you paste that in above, it will load it in the test build of the WebPlayer app on this server.
+    <br/><br/>
+    <b>NOTE: You can tell it is the testing server when your URL begins with "http://play-test." rather than "https://play."</b>
+    <h3>Update</h3>
+    <p>We can also paste the URL from the game's landing page from the main site.</p>
+    <p>Here is an example, using "Moquette":</p>
+    <code>https://textadventures.co.uk/games/view/zbzfpcnknu_vdjog-cbihw/moquette</code>
+    <p>If you paste that in above, it will load the game in the test build of the WebPlayer app on this server.</p>
+  </body>
+  <script>
+    var loadForTesting = function(url){
+      console.log(url);
+      if (url.startsWith("https://play.")){
+        window.open(url.replace('https://play.','http://play-test.'), '_blank');
+      } else if (url.startsWith("https://textadventures.co.uk/games/view/")){
+        var gameId = url.replace("https://textadventures.co.uk/games/view/","").split("/")[0];
+        if (gameId == null) {
+          window.alert("Invalid link.");
+          return;
+        }
+        window.open("http://play-test.textadventures.co.uk/Play.aspx?id=" + gameId + "", "_blank");
+      } else {
+        window.alert("Invalid link.");
+      }
+    };
+  </script>
+</html>
